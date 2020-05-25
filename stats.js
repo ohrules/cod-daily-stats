@@ -39,10 +39,10 @@ function calculateStats(matches) {
         'Total XP': aggregate(stats, 'totalXp')
     }
     statValues['K/D'] = statValues.Kills / statValues.Deaths;
-    statValues['K/D'] = statValues['K/D'].toFixed(2) || "Undefined";
+    statValues['K/D'] = statValues['K/D'] == NaN ? statValues['K/D'].toFixed(2) : "Undefined";
 
     statValues['Kills/Match'] = statValues.Kills / statValues.Matches;
-    statValues['Kills/Match'] = statValues['Kills/Match'].toFixed(2) || "Undefined";
+    statValues['Kills/Match'] = statValues['Kills/Match'] == NaN ? statValues['Kills/Match'].toFixed(2) : "Undefined";
 
     return statValues;
 }
